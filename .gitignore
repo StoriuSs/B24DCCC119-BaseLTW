@@ -45,4 +45,4 @@ build
 # Sentry Auth Token
 #.sentryclirc
 
-docs/
+documentation/
