@@ -42,6 +42,12 @@
 		component: './GuessNumber',
 		icon: 'TrophyOutlined',
 	},
+	{
+		path: '/todo-list',
+		name: 'TodoList',
+		component: './TodoList',
+		icon: 'UnorderedListOutlined',
+	},
 
 	// DANH MUC HE THONG
 	// {

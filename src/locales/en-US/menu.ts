@@ -5,6 +5,7 @@ export default {
 	'menu.Dashboard': 'Trang chủ',
 	'menu.News': 'Tin tức',
 	'menu.GuessNumber': 'Guess Number Game',
+	'menu.TodoList': 'Todo List',
 
 	'menu.DanhMuc': 'Danh mục',
 	'menu.DanhMuc.ChucVu': 'Chức vụ',
