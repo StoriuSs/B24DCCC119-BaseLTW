@@ -63,6 +63,63 @@
 	// 	],
 	// },
 
+	// DAT LICH DICH VU
+	{
+		name: 'DatLichDichVu',
+		path: '/dat-lich-dich-vu',
+		icon: 'CalendarOutlined',
+		routes: [
+			{
+				name: 'QuanLy',
+				path: '/dat-lich-dich-vu/quan-ly',
+				routes: [
+					{
+						name: 'NhanVien',
+						path: '/dat-lich-dich-vu/quan-ly/nhan-vien',
+						component: './DatLich/NhanVien',
+					},
+					{
+						name: 'DichVu',
+						path: '/dat-lich-dich-vu/quan-ly/dich-vu',
+						component: './DatLich/DichVu',
+					},
+					{
+						name: 'LichHen',
+						path: '/dat-lich-dich-vu/quan-ly/lich-hen',
+						component: './DatLich/QuanLy/LichHen',
+					},
+				],
+			},
+			{
+				name: 'LichHen',
+				path: '/dat-lich-dich-vu/lich-hen',
+				routes: [
+					{
+						name: 'DanhSach',
+						path: '/dat-lich-dich-vu/lich-hen/danh-sach',
+						component: './DatLich/LichHen/DanhSach',
+					},
+					{
+						name: 'DatLich',
+						path: '/dat-lich-dich-vu/lich-hen/dat-lich',
+						component: './DatLich/LichHen/DatLich',
+						hideInMenu: true,
+					},
+				],
+			},
+			{
+				name: 'DanhGia',
+				path: '/dat-lich-dich-vu/danh-gia',
+				component: './DatLich/DanhGia',
+			},
+			{
+				name: 'BaoCao',
+				path: '/dat-lich-dich-vu/bao-cao',
+				component: './DatLich/BaoCao',
+			},
+		],
+	},
+
 	{
 		path: '/notification',
 		routes: [
