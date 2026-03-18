@@ -8,6 +8,7 @@ module.exports = {
 	rules: {
 		'@typescript-eslint/no-namespace': 'off',
 		'@typescript-eslint/no-unused-vars': 'off',
+		'@typescript-eslint/consistent-type-imports': 'off',
 		'react-hooks/exhaustive-deps': 'off',
 		quotes: ['warn', 'single'],
 		semi: ['warn', 'always'],

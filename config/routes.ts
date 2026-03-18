@@ -48,7 +48,6 @@
 		component: './TodoList',
 		icon: 'UnorderedListOutlined',
 	},
-
 	// DANH MUC HE THONG
 	// {
 	// 	name: 'DanhMuc',
@@ -116,6 +115,44 @@
 				name: 'BaoCao',
 				path: '/dat-lich-dich-vu/bao-cao',
 				component: './DatLich/BaoCao',
+			},
+		],
+	},
+	// QUẢN LÝ VĂN BẰNG
+	{
+		path: '/quan-ly-van-bang',
+		name: 'Quản lý văn bằng',
+		icon: 'BookOutlined',
+		routes: [
+			{
+				name: 'Sổ văn bằng',
+				path: '/quan-ly-van-bang/so-van-bang',
+				component: './QuanLyVanBang/SoVanBang',
+			},
+			{
+				name: 'Quyết định tốt nghiệp',
+				path: '/quan-ly-van-bang/quyet-dinh',
+				component: './QuanLyVanBang/QuyetDinh',
+			},
+			{
+				name: 'Cấu hình biểu mẫu',
+				path: '/quan-ly-van-bang/cau-hinh',
+				component: './QuanLyVanBang/CauHinh',
+			},
+			{
+				name: 'Thông tin văn bằng',
+				path: '/quan-ly-van-bang/thong-tin',
+				component: './QuanLyVanBang/ThongTin',
+			},
+			{
+				name: 'Tra cứu văn bằng',
+				path: '/quan-ly-van-bang/tra-cuu',
+				component: './QuanLyVanBang/TraCuu',
+			},
+			{
+				name: 'Thống kê',
+				path: '/quan-ly-van-bang/thong-ke',
+				component: './QuanLyVanBang/ThongKe',
 			},
 		],
 	},
