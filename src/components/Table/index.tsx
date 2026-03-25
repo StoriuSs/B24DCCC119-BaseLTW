@@ -69,12 +69,48 @@ const TableBase = (props: TableBaseProps) => {
 	} = model;
 	const filters: TFilter<any>[] = model?.filters;
 	const getData = props.getData ?? model?.getModel;
+	const dataStateKey = props.dataState || 'danhSach';
 	const hasFilter = props.columns?.filter((item) => item.filterType)?.length;
 	const [finalColumns, setColumns] = useState<IColumn<any>[]>([]);
 	const [visibleFilter, setVisibleFilter] = useState(false);
 	const [visibleImport, setVisibleImport] = useState(false);
 	const [visibleExport, setVisibleExport] = useState(false);
 	const searchInputRef = useRef<InputRef>(null);
+
+	const getFieldValue = (record: any, field: any) => {
+		if (Array.isArray(field)) {
+			return field.reduce((acc, key) => (acc ? acc[key] : undefined), record);
+		}
+		if (typeof field === 'string' && field.includes('.')) {
+			return field.split('.').reduce((acc, key) => (acc ? acc[key] : undefined), record);
+		}
+		return _.get(record, field);
+	};
+
+	const activeFilters = (filters ?? []).filter((item) => item.active !== false);
+	const localFilteredData = React.useMemo(() => {
+		const source = model?.[dataStateKey] ?? [];
+		if (!activeFilters.length) return source;
+
+		return source.filter((row: any) =>
+			activeFilters.every((filter) => {
+				const fieldValue = getFieldValue(row, filter.field as any);
+				const values = filter.values ?? [];
+				if (!values.length) return true;
+
+				if (filter.operator === EOperatorType.CONTAIN) {
+					const text = String(fieldValue ?? '').toLowerCase();
+					return values.some((value) => text.includes(String(value ?? '').toLowerCase()));
+				}
+
+				if (filter.operator === EOperatorType.INCLUDE) {
+					return values.some((value) => String(fieldValue) === String(value));
+				}
+
+				return true;
+			}),
+		);
+	}, [activeFilters, dataStateKey, model]);
 
 	useEffect(() => {
 		setPage(1);
@@ -510,7 +546,7 @@ const TableBase = (props: TableBaseProps) => {
 						<Tooltip title='Tổng số dữ liệu'>
 							<div className={classNames({ total: true, small: props?.otherProps?.size === 'small' })}>
 								Tổng số:
-								<span>{inputFormat(total || 0)}</span>
+								<span>{inputFormat(activeFilters.length ? localFilteredData.length : total || 0)}</span>
 							</div>
 						</Tooltip>
 					) : null}
@@ -546,7 +582,7 @@ const TableBase = (props: TableBaseProps) => {
 						current: page,
 						pageSize: limit,
 						position: ['bottomRight'],
-						total,
+						total: activeFilters.length ? localFilteredData.length : total,
 						showSizeChanger: true,
 						pageSizeOptions: ['5', '10', '25', '50', '100'],
 						showTotal: (tongSo: number) => (
@@ -570,7 +606,7 @@ const TableBase = (props: TableBaseProps) => {
 						),
 					}}
 					onChange={onChange}
-					dataSource={model?.[props.dataState || 'danhSach']?.map((item: any, index: number) => ({
+					dataSource={localFilteredData.map((item: any, index: number) => ({
 						...item,
 						index: index + 1 + (page - 1) * limit * (props.pageable === false ? 0 : 1),
 						key: item?._id ?? index,

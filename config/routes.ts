@@ -156,6 +156,34 @@
 			},
 		],
 	},
+	// QUẢN LÝ CÂU LẠC BỘ
+	{
+		path: '/quan-ly-cau-lac-bo',
+		name: 'Quản lý CLB',
+		icon: 'TeamOutlined',
+		routes: [
+			{
+				name: 'Danh sách CLB',
+				path: '/quan-ly-cau-lac-bo/danh-sach',
+				component: './QuanLyCauLacBo/DanhSachCLB',
+			},
+			{
+				name: 'Đơn đăng ký',
+				path: '/quan-ly-cau-lac-bo/don-dang-ky',
+				component: './QuanLyCauLacBo/DonDangKy',
+			},
+			{
+				name: 'Quản lý thành viên',
+				path: '/quan-ly-cau-lac-bo/thanh-vien',
+				component: './QuanLyCauLacBo/ThanhVien',
+			},
+			{
+				name: 'Thống kê',
+				path: '/quan-ly-cau-lac-bo/thong-ke',
+				component: './QuanLyCauLacBo/ThongKe',
+			},
+		],
+	},
 
 	{
 		path: '/notification',
