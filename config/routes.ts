@@ -184,6 +184,34 @@
 			},
 		],
 	},
+	// ỨNG DỤNG DU LỊCH
+	{
+		path: '/du-lich',
+		name: 'Du lịch',
+		icon: 'CompassOutlined',
+		routes: [
+			{
+				name: 'Khám phá điểm đến',
+				path: '/du-lich/kham-pha',
+				component: './DuLich/KhamPha',
+			},
+			{
+				name: 'Tạo lịch trình',
+				path: '/du-lich/lich-trinh',
+				component: './DuLich/LichTrinh',
+			},
+			{
+				name: 'Quản lý ngân sách',
+				path: '/du-lich/ngan-sach',
+				component: './DuLich/NganSach',
+			},
+			{
+				name: 'Admin - Quản lý điểm đến',
+				path: '/du-lich/admin-diem-den',
+				component: './DuLich/AdminDiemDen',
+			},
+		],
+	},
 
 	{
 		path: '/notification',
