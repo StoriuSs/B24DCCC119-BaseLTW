@@ -7,6 +7,11 @@ export default {
 	'menu.News': 'Tin tức',
 	'menu.GuessNumber': 'Game Đoán Số',
 	'menu.TodoList': 'Danh sách công việc',
+	'menu.QuanLyCongViecNhom': 'Quản lý công việc nhóm',
+	'menu.QuanLyCongViecNhom.DangNhap': 'Đăng nhập',
+	'menu.QuanLyCongViecNhom.CongViec': 'Quản lý công việc',
+	'menu.QuanLyCongViecNhom.NguoiDung': 'Quản lý user',
+	'menu.QuanLyCongViecNhom.LichThongKe': 'Lịch & thống kê',
 
 	'menu.DanhMuc': 'Danh mục',
 	'menu.DanhMuc.ChucVu': 'Chức vụ',

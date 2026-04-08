@@ -212,6 +212,37 @@
 			},
 		],
 	},
+	{
+		path: '/quan-ly-cong-viec-nhom',
+		name: 'QuanLyCongViecNhom',
+		icon: 'TeamOutlined',
+		routes: [
+			{
+				path: '/quan-ly-cong-viec-nhom',
+				redirect: '/quan-ly-cong-viec-nhom/cong-viec',
+			},
+			{
+				name: 'DangNhap',
+				path: '/quan-ly-cong-viec-nhom/dang-nhap',
+				component: './QuanLyCongViecNhom/DangNhap',
+			},
+			{
+				name: 'CongViec',
+				path: '/quan-ly-cong-viec-nhom/cong-viec',
+				component: './QuanLyCongViecNhom/CongViec',
+			},
+			{
+				name: 'NguoiDung',
+				path: '/quan-ly-cong-viec-nhom/nguoi-dung',
+				component: './QuanLyCongViecNhom/NguoiDung',
+			},
+			{
+				name: 'LichThongKe',
+				path: '/quan-ly-cong-viec-nhom/lich-thong-ke',
+				component: './QuanLyCongViecNhom/LichThongKe',
+			},
+		],
+	},
 
 	{
 		path: '/notification',
