@@ -9,7 +9,6 @@ import {
 	saveUsers,
 } from '@/pages/QuanLyCongViecNhom/utils/storage';
 
-// Service local dành cho bài thực hành (không gọi backend thật).
 export const getUsers = async (): Promise<QLCVNUser[]> => loadUsers();
 export const putUsers = async (users: QLCVNUser[]): Promise<QLCVNUser[]> => {
 	saveUsers(users);

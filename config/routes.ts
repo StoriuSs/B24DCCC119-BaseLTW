@@ -48,6 +48,12 @@
 		component: './TodoList',
 		icon: 'UnorderedListOutlined',
 	},
+	{
+		path: '/profile-card-demo',
+		name: 'ProfileCard Demo',
+		component: './ProfileCardDemo',
+		icon: 'UserOutlined',
+	},
 	// DANH MUC HE THONG
 	// {
 	// 	name: 'DanhMuc',
