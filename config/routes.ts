@@ -249,6 +249,12 @@
 			},
 		],
 	},
+	{
+		path: '/quan-ly-phong-hoc',
+		name: 'Quản lý phòng học',
+		icon: 'BankOutlined',
+		component: './QuanLyPhongHoc',
+	},
 
 	{
 		path: '/notification',
