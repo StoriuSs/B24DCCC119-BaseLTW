@@ -255,6 +255,44 @@
 		icon: 'BankOutlined',
 		component: './QuanLyPhongHoc',
 	},
+	{
+		path: '/blog-ca-nhan',
+		name: 'Blog cá nhân',
+		icon: 'ReadOutlined',
+		component: './BlogCaNhan',
+		routes: [
+			{
+				path: '/blog-ca-nhan',
+				redirect: '/blog-ca-nhan/trang-chu',
+			},
+			{
+				name: 'Trang chủ',
+				path: '/blog-ca-nhan/trang-chu',
+				component: './BlogCaNhan/Home',
+			},
+			{
+				name: 'Chi tiết bài viết',
+				path: '/blog-ca-nhan/bai-viet/:slug',
+				component: './BlogCaNhan/Detail',
+				hideInMenu: true,
+			},
+			{
+				name: 'Giới thiệu',
+				path: '/blog-ca-nhan/gioi-thieu',
+				component: './BlogCaNhan/About',
+			},
+			{
+				name: 'Quản lý bài viết',
+				path: '/blog-ca-nhan/quan-ly/bai-viet',
+				component: './BlogCaNhan/AdminPosts',
+			},
+			{
+				name: 'Quản lý thẻ',
+				path: '/blog-ca-nhan/quan-ly/the',
+				component: './BlogCaNhan/AdminTags',
+			},
+		],
+	},
 
 	{
 		path: '/notification',
